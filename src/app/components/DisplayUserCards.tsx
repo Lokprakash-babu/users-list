@@ -10,7 +10,7 @@ const DisplayUserCards = () => {
     <Row>
       {users.map((user) => (
         <Col key={user.id} xs={24} sm={24} md={8} lg={8} xl={6}>
-          <UserCard id={user.id} />
+          <UserCard user={user} />
         </Col>
       ))}
     </Row>

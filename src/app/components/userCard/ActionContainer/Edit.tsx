@@ -4,10 +4,10 @@ import { useState } from "react";
 import { Form, Modal, Row } from "antd";
 import { EditOutlined } from "@ant-design/icons";
 import FormItem from "../../FormItem";
-const Edit = ({ id }) => {
+const Edit = ({ user }) => {
   const [form] = Form.useForm();
-  const { users, editUser } = useUserContext();
-  const user = users.find((user) => user.id === id);
+  const { editUser } = useUserContext();
+  const id = user.id;
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const showModal = () => {

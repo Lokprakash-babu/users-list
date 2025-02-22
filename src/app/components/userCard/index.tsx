@@ -6,28 +6,28 @@ import Remove from "./ActionContainer/Remove";
 import Like from "./ActionContainer/Like";
 import Avatar from "./Avatar";
 
-const UserCard = ({ id }) => {
+const UserCard = ({ user }) => {
   return (
     <Card
       style={{
         margin: "15px",
         border: "1px solid #e8e8e8",
       }}
-      cover={<Avatar id={id} />}
+      cover={<Avatar user={user} />}
       className="rounded-none"
       actions={[
         <div key="like" className="text-[20px]">
-          <Like id={id} />
+          <Like user={user} />
         </div>,
         <div key="edit" className="text-[20px]">
-          <Edit id={id} />
+          <Edit user={user} />
         </div>,
         <div key="remove" className="text-[20px]">
-          <Remove id={id} />
+          <Remove id={user.id} />
         </div>,
       ]}
     >
-      <Address id={id} />
+      <Address user={user} />
     </Card>
   );
 };

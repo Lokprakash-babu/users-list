@@ -1,4 +1,3 @@
-import { useUserContext } from "@/app/context/UserContext";
 import { GlobalOutlined, MailOutlined, PhoneOutlined } from "@ant-design/icons";
 
 const AddressFieldDisplay = ({ icon, value }) => {
@@ -9,9 +8,7 @@ const AddressFieldDisplay = ({ icon, value }) => {
     </div>
   );
 };
-const Address = ({ id }) => {
-  const { users } = useUserContext();
-  const user = users.find((user) => user.id === id);
+const Address = ({ user }) => {
   const email = user?.email;
   const website = user?.website;
   const phone = user?.phone;
