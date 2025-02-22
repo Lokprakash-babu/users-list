@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
 import { createContext, useContext, useEffect, useState } from "react";
+import Loader from "../components/Loader";
 
 export interface IUser {
   id: number;
@@ -46,9 +47,6 @@ const UserContextProvider = ({ children }: { children }) => {
       })
       .finally(() => setIsLoading(false));
   }, []);
-  if (isLoading) {
-    return <div>Loading...</div>;
-  }
 
   const handleLike = (id) => {
     const userIndex = users.findIndex((user) => user.id === id);
@@ -72,6 +70,9 @@ const UserContextProvider = ({ children }: { children }) => {
     setUsers(newUser);
   };
 
+  if (isLoading) {
+    return <Loader />;
+  }
   return (
     <UserContext.Provider
       value={{
