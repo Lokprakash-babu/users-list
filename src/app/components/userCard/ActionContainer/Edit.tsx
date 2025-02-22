@@ -76,7 +76,11 @@ const Edit = ({ id }) => {
           },
         }}
       >
-        <FormItem label="Name" name="name" rules={[{ required: true }]} />
+        <FormItem
+          label="Name"
+          name="name"
+          rules={[{ required: true, message: "This field is required" }]}
+        />
         <FormItem
           label="Email"
           name="email"
@@ -84,12 +88,20 @@ const Edit = ({ id }) => {
             { required: true },
             {
               type: "email",
-              message: "The input is not valid E-mail!",
+              message: "Invalid email",
             },
           ]}
         />
-        <FormItem label="Phone" name="phone" rules={[{ required: true }]} />
-        <FormItem label="Website" name="website" rules={[{ required: true }]} />
+        <FormItem
+          label="Phone"
+          name="phone"
+          rules={[{ required: true, message: "This field is required" }]}
+        />
+        <FormItem
+          label="Website"
+          name="website"
+          rules={[{ required: true, message: "This field is required" }]}
+        />
       </Modal>
     </div>
   );
